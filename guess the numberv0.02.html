@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess the number v0.02</title>
+
+<style type="text/css">
+	body{
+		background-color: #4ea8e0;
+	}
+	
+	button {
+		display: block;
+		margin: 0 auto;
+		padding: 60px;
+		font-size: 45px;
+		font-family: Verdana;
+		border-radius: 35px;
+	}
+	
+	h1 {
+		text-align: center;
+		font-size: 125px;
+		font-family: Arial Black;
+	}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Guess the number!</h1>
+
+<button onclick=playgame()>Play game</button>
+
+<script type="text/javascript">
+
+function playgame(){
+var scores = {'You' : 0, 'Computer' : 0}
+while(userNumber !="stop"){
+var randomNumber = Math.floor(Math.random()*10)
+var userNumber = prompt ("Enter some number between 0 and 10. Type 'stop' to stop.")
+if(userNumber == "stop"){break}
+if(randomNumber == userNumber) { 
+	alert("Very nice :)") 
+scores.You += 1
+}
+else { 
+	alert("That's incorrect :(, the number was " +randomNumber)
+scores.Computer += 1
+}
+
+}
+document.body.innerHTML = ""
+document.write(`<h1>Your score is ${scores.You}, and the computer's score is ${scores.Computer}</h1><button onclick=playgame()>Play again</button>`)
+
+}
+</script>
+
+
+</body>
+</html>
